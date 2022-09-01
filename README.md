@@ -12,7 +12,9 @@ This is a simple damage calculator for 7 days to die Alpha 20.6.
 
 # Current Paradigm:
 (base * [1+qualitymod+perkmod]) * (difficultymod)
-each item in paranthesis is decimal dropped.
+
+Each item in paranthesis is decimal dropped.
+
 Item in brackets as decimals are OK.
 
 i.e.
@@ -21,11 +23,13 @@ i.e.
 <strong>Wrong:</strong>
 
 13.8 * (2) = 27.6 
+
 27.6 * 1.5 = 41.4
 
 <strong>Correct:</strong>
 
 13.8 * 2 = 27.6 --> 27
+
 27 * 1.5 = 40.5 --> 40
 
 Needs to be understood:
