@@ -1,6 +1,6 @@
 // g++ -std=c++17 -o program.out program.cpp
 #include <iostream>
-#include "data.cpp"
+#include "data.h"
 using namespace std;
 
 /*
