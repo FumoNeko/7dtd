@@ -1,48 +1,75 @@
 // g++ -std=c++17 -o program.out program.cpp
 #include <iostream>
 #include "data.h"
+#include <string>
 using namespace std;
 
-/*
-Current Paradigm:
-((base * [1+qualitymod+perkmod]) * [difficultymod])
-each item in paranthesis is decimal dropped.
-Item in brackets as decimals are OK.
+void termgui(string menu) {
+    weapon = "NONE";
+    quality = 1;
+    perkLevel = 0;
+    mods = "NONE";
+    numMods = 0;
+    ammoType = "NONE";
+    enemyType = "NONE"; // for armor
+    buffs = "NONE";
 
-i.e.
-13.8 * [1+0.5+0.5] * [1.5]
+    int caseMenu{};
 
-Wrong:
-
-(13.8 * [2]) = 27.6 
-(27.6 * [1.5]) = 41.4
-
-Correct:
-
-(13.8 * [2]) = 27.6 --> 27
-(27 * [1.5]) = 40.5 --> 40
-
-Needs testing:
-
-Recog and other buffs need testing.
-Body part damage modifiers need testing.
-Armor needs testing.
-
-Needs to be understood:
-
-What kind of worn items affect damage other than mods? 
-Does it mean the +1 perception glasses and stuff?
-
-What does it mean if an item is "passed in"?
-does held item mean you can shoot something and then switch 
-to another weapon to deal different damage on projectile weapons? 
-Why would this be different?
-
-Have no idea about entity class.
-Do different zombies just have different damage modifiers
-without respect to armor? Or is it just player vs zombie damage?
-*/
-
+    if (menu == "exit") {
+        caseMenu = 0;
+    }
+    else if (menu == "main") {
+        caseMenu = 1;
+    }
+    else if (menu == "weapon") {
+        caseMenu = 2;
+    }
+    else if (menu == "quality") {
+        caseMenu = 3;
+    }
+    else if (menu == "perkLevel") {
+        caseMenu = 4;
+    }
+    /*
+    else if (menu == "mods") {
+        caseMenu = ?;
+    }
+    */
+    else if (menu == "numMods") {
+        caseMenu = 5;
+    }
+    else if (menu == "buffs") {
+        caseMenu = 6;
+    }
+    else if (menu == "ammoType") {
+        caseMenu = 7;
+    }
+    else if (menu == "enemyType") {
+        caseMenu = 8;
+    }
+    // while loop to select caseMenu int? going to bed.
+    switch(caseMenu) {
+        case 1:
+            cout << "------Main Menu------"                                                    << endl;
+            cout << "Select an option from the menu:"                                          << endl;
+            cout << "0. Exit Program"                                                          << endl;
+            cout << "1. Set Variable: Weapon"             << " Selected: " << weapon    << " " << endl;
+            cout << "2. Set Variable: Quality"            << " Selected: " << quality   << " " << endl;
+            cout << "3. Set Variable: Perk Level"         << " Selected: " << perkLevel << " " << endl;
+            //cout << "Set Array: Mods"                   << " Selected: " << mods      << " " << endl;
+            cout << "4. Set Variable: # of Mods"          << " Selected: " << numMods   << " " << endl;
+            cout << "5. Set Array: Buffs"                 << " Selected: " << buffs     << " " << endl;
+            cout << "6. Set Variable: Ammo Type"          <<
+            cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << enemyType << " " << endl;
+            break;
+        case 2:
+            // code block
+            break;
+        default:
+            cout << "error" << endl;
+    }
+}
 
 // Wooden club is used as an example here.
 int main() {
@@ -52,7 +79,7 @@ int main() {
 //  int ammoType
 //  int enemyType // for Armor
 //  int numMods
-//  int Buffs
+//  int buffs
     
     // weapon variables
     float base = 13.8;

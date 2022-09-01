@@ -1,6 +1,6 @@
 # Description
 This is a simple damage calculator for 7 days to die Alpha 20.6.
-As of right now v0.1a this can only calculate the damage of a wooden club.
+As of right now v0.2 pre-alpha this is only capable of handling melee weapons and the robotic sledge.
 
 # Todo
 <li>Armor needs testing.</li>
