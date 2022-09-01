@@ -5,22 +5,22 @@ using namespace std;
 
 /*
 Current Paradigm:
-(base * [1+qualitymod+perkmod]) * (difficultymod)
+((base * [1+qualitymod+perkmod]) * [difficultymod])
 each item in paranthesis is decimal dropped.
 Item in brackets as decimals are OK.
 
 i.e.
-13.8 * [1+0.5+0.5] * (1.5)
+13.8 * [1+0.5+0.5] * [1.5]
 
 Wrong:
 
-13.8 * (2) = 27.6 
-27.6 * 1.5 = 41.4
+(13.8 * [2]) = 27.6 
+(27.6 * [1.5]) = 41.4
 
 Correct:
 
-13.8 * 2 = 27.6 --> 27
-27 * 1.5 = 40.5 --> 40
+(13.8 * [2]) = 27.6 --> 27
+(27 * [1.5]) = 40.5 --> 40
 
 Needs testing:
 

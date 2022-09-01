@@ -11,27 +11,28 @@ As of right now v0.1a this can only calculate the damage of a wooden club.
 
 <li>Data for each weapon needs to be added.</li>
 
-# Current Paradigm
-(base * [1+qualitymod+perkmod]) * (difficultymod)
+# Current Paradigm:
+((base * [1+qualitymod+perkmod]) * [difficultymod])
 
 Each item in paranthesis is decimal dropped.
 
 Item in brackets as decimals are OK.
 
 i.e.
-13.8 * [1+0.5+0.5] * (1.5)
+
+13.8 * [1+0.5+0.5] * [1.5]
 
 <strong>Wrong:</strong>
 
-13.8 * (2) = 27.6 
+(13.8 * [2]) = 27.6 
 
-27.6 * 1.5 = 41.4
+(27.6 * [1.5]) = 41.4
 
 <strong>Correct:</strong>
 
-13.8 * 2 = 27.6 --> 27
+(13.8 * [2]) = 27.6 --> 27
 
-27 * 1.5 = 40.5 --> 40
+(27 * [1.5]) = 40.5 --> 40
 
 # Order of Operations as per the XML file
 
