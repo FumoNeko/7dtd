@@ -57,7 +57,7 @@ int main() {
     
     int finaldamage = mod1 * difficultymod;
     
-    cout << endl << finaldamage;
+    cout << finaldamage << endl;
 
 
     return 0;
