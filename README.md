@@ -2,15 +2,13 @@
 This is a simple damage calculator for 7 days to die Alpha 20.6.
 
 # Todo
-<li>
-Armor needs testing
-Body part damage modifiers need testing
-Recog and other buffs need testing
-Bullet types need testing
-Mod Power needs testing
+<li>Armor needs testing.</li>
+<li>Body part damage modifiers need testing.</li>
+<li>Recog and other buffs need testing.</li>
+<li>Bullet types need testing.</li>
+<li>Mod Power needs testing.</li>
 
-Data for each weapon needs to be added.
-</li>
+<li>Data for each weapon needs to be added.</li>
 
 # Current Paradigm:
 (base * [1+qualitymod+perkmod]) * (difficultymod)
