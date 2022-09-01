@@ -1,5 +1,6 @@
 # Description
 This is a simple damage calculator for 7 days to die Alpha 20.6.
+As of right now v0.1a this can only calculate the damage of a wooden club.
 
 # Todo
 <li>Armor needs testing.</li>
@@ -10,7 +11,7 @@ This is a simple damage calculator for 7 days to die Alpha 20.6.
 
 <li>Data for each weapon needs to be added.</li>
 
-# Current Paradigm:
+# Current Paradigm
 (base * [1+qualitymod+perkmod]) * (difficultymod)
 
 Each item in paranthesis is decimal dropped.
@@ -32,17 +33,29 @@ i.e.
 
 27 * 1.5 = 40.5 --> 40
 
-Needs to be understood:
+# Order of Operations as per the XML file
+
+    1. Entity Class
+    2. the item in question including installed mods (if an item is passed in)
+    3. held item  including installed mods, if not equal to the item in question
+    4. worn items  including installed mods
+    5. player progression (skills, perks...)
+    6. buffs
+    7. bonus damage such as for headshots or attacking specific block materials (see below)
+    8. game difficulty modifier
+    9. armor reduces damage
+
+# Needs to be understood
 
 
 What kind of worn items affect damage other than mods? 
 Does it mean the +1 perception glasses and stuff?
 
-what does it mean if an item is "passed in"?
+What does it mean if an item is "passed in"?
 does held item mean you can shoot something and then switch 
 to another weapon to deal different damage on projectile weapons? 
-What? Why would this be different?
+Why would this be different?
 
-Have no idea about entity class.
+What is Entity Class?
 Do different zombies just have different damage modifiers
 without respect to armor? Or is it just player vs zombie damage?
