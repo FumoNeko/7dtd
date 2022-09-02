@@ -23,7 +23,7 @@ int checkInput(){
 	}
 }
 
-int main(){
+int main() {
     cout << "------Set Variable: Quality------" << endl;
     cout << "0. Return to Main Menu" << endl;
     cout << "1. Quality 1" << endl;

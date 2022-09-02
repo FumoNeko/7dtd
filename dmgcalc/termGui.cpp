@@ -1,24 +1,25 @@
-void checkInput(){
+int checkInput(){
     try {
         string str{};
         cin >> str;
         for (int i = 0; i < str.length(); i++) {
             if (isdigit(str[i]) == true) {
-                int selection = stoi(str);
-                cout << selection << endl;
+                cout << endl << "OK" << endl;
             }
             else {
                 throw (str);
             }
         }
+        return stoi(str);
 	}
 	catch (string uinput) {
 	    cout << "User input is not an integer!" << endl;
         cout << "Input was: " << uinput << endl;
+        return -1;
 	}
 }
 
-void termGui(string menu) {
+int termGui(string menu) {
     string weapon = "NONE";
     int quality = 1;
     int perkLevel = 0;
@@ -77,7 +78,14 @@ void termGui(string menu) {
             cout << "5. Set Array: Buffs"                 << " Selected: " << buffs     << " " << endl;
             cout << "6. Set Variable: Ammo Type"          <<
             cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << enemyType << " " << endl;
-            cin >> selection;
+            badAnswer = true;
+            while (badAnswer == true) {
+                selection = checkInput();
+                if (selection != -1) {
+                    badAnswer = false;
+                }
+            }
+            return selection;
             break;
         case 2:
             cout << "------Set Variable: Weapon------"                                                                               << endl;
@@ -90,7 +98,13 @@ void termGui(string menu) {
             cout << "    26) Plasma Baton      27) Stone Spear        28) Iron Spear       29) Steel Spear   30) Stone Sledgehammer" << endl;
             cout << "    31) Iron Sledgehammer 32) Steel Sledgehammer 33) Leather Knuckles 34) Iron Knuckles 35) Steel Knuckles"     << endl;
             cout << "    36) Iron Hoe          37) Flashlight         38) Torch"                                                     << endl;
-            cin >> selection;
+            while (badAnswer == true) {
+                selection = checkInput();
+                if (selection != -1) {
+                    badAnswer = false;
+                }
+            }
+            return selection+100;
             break;
         case 3:
             cout << "------Set Variable: Quality------" << endl;
@@ -101,7 +115,13 @@ void termGui(string menu) {
             cout << "4. Quality 4" << endl;
             cout << "5. Quality 5" << endl;
             cout << "6. Quality 6" << endl;
-            cin >> selection;
+            while (badAnswer == true) {
+                selection = checkInput();
+                if (selection != -1) {
+                    badAnswer = false;
+                }
+            }
+            return selection+200;
             break;
         case 4:
             cout << "------Set Variable: Perk Level------" << endl;
@@ -112,23 +132,13 @@ void termGui(string menu) {
             cout << "4. Perk Level 3" << endl;
             cout << "5. Perk Level 4" << endl;
             cout << "6. Perk Level 5" << endl;
-            try {
-		        string str{};
-    	        cin >> str;
-                for (int i = 0; i < str.length(); i++) {
-                    if (isdigit(str[i]) == true) {
-                        int selection = stoi(str);
-                        cout << selection << endl;
-                    }
-                    else {
-      		            throw (str);
-    	            }
+            while (badAnswer == true) {
+                selection = checkInput();
+                if (selection != -1) {
+                    badAnswer = false;
                 }
-	        }
-	        catch (string uinput) {
-	            cout << "User input is not an integer!" << endl;
-                cout << "Input was: " << uinput << endl;
-	        }
+            }
+            return selection+300;
             break;
         default:
             cout << "This feature has not been implemented yet." << endl;
