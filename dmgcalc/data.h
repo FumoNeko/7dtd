@@ -1,16 +1,19 @@
+#include <string>
+using namespace std;
+
 struct {
-    float baseEntityDamage = 6f;
+    float baseEntityDamage = 6.0f;
     float baseBlockDamage = 21.5f;
 } StoneAxe;
 
 struct {
-    float baseEntityDamage = 8f;
+    float baseEntityDamage = 8.0f;
     float baseBlockDamage = 22.6f;
 } TazasStoneAxe;
 
 struct {
-    float baseEntityDamage = 12f;
-    float baseBlockDamage = 22f;
+    float baseEntityDamage = 12.0f;
+    float baseBlockDamage = 22.0f;
 } ClawHammer;
 
 struct {
@@ -31,7 +34,7 @@ struct {
 struct {
     float baseEntityDamage = 23.2f;
     float baseBlockDamage = 62.8f;
-} StelPickaxe;
+} SteelPickaxe;
 
 struct {
     float baseEntityDamage = 9.6f;
@@ -40,16 +43,16 @@ struct {
 
 struct {
     float baseEntityDamage = 11.6f;
-    float baseBlockDamage = 51f;
+    float baseBlockDamage = 51.0f;
 } IronShovel;
 
 struct {
     float baseEntityDamage = 17.4f;
-    float baseBlockDamage = 69f;
+    float baseBlockDamage = 69.0f;
 } SteelShovel;
 
 struct {
-    float baseEntityDamage = 6f;
+    float baseEntityDamage = 6.0f;
     float baseBlockDamage = 24.3f;
 } Chainsaw;
 
@@ -70,12 +73,12 @@ struct {
 
 struct {
     float baseEntityDamage = 16.5f;
-    float baseBlockDamage = 58f;
+    float baseBlockDamage = 58.0f;
 } ImpactDriver;
 
 struct {
     float baseEntityDamage = 5.1f;
-    float baseBlockDamage = 4f;
+    float baseBlockDamage = 4.0f;
 } BoneKnife;
 
 struct {
@@ -90,7 +93,7 @@ struct {
 
 struct {
     float baseEntityDamage = 19.8f;
-    float baseBlockDamage = 21f;
+    float baseBlockDamage = 21.0f;
 } Machete;
 
 struct {
@@ -105,7 +108,7 @@ struct {
 
 struct {
     float baseEntityDamage = 19.2f;
-    float baseBlockDamage = 16f;
+    float baseBlockDamage = 16.0f;
 } CandyClub;
 
 struct {
@@ -120,27 +123,27 @@ struct {
 
 struct {
     float baseEntityDamage = 10.8f;
-    float baseBlockDamage = 6f;
+    float baseBlockDamage = 6.0f;
 } StunBaton;
 
 struct {
     float baseEntityDamage = 10.8f;
-    float baseBlockDamage = 6f;
+    float baseBlockDamage = 6.0f;
 } PlasmaBaton;
 
 struct {
     float baseEntityDamage = 10.3f;
-    float baseBlockDamage = 5f;
+    float baseBlockDamage = 5.0f;
 } StoneSpear;
 
 struct {
     float baseEntityDamage = 12.4f;
-    float baseBlockDamage = 7f;
+    float baseBlockDamage = 7.0f;
 } IronSpear;
 
 struct {
     float baseEntityDamage = 18.6f;
-    float baseBlockDamage = 9f;
+    float baseBlockDamage = 9.0f;
 } SteelSpear;
 
 struct {
@@ -155,7 +158,7 @@ struct {
 
 struct {
     float baseEntityDamage = 46.2f;
-    float baseBlockDamage = 85f;
+    float baseBlockDamage = 85.0f;
 } SteelSledgehammer;
 
 struct {
@@ -165,7 +168,7 @@ struct {
 
 struct {
     float baseEntityDamage = 9.1f;
-    float baseBlockDamage = 3f;
+    float baseBlockDamage = 3.0f;
 } IronKnuckles;
 
 struct {
@@ -175,22 +178,22 @@ struct {
 
 struct {
     float baseEntityDamage = 13.2f;
-    float baseBlockDamage = 26f;
+    float baseBlockDamage = 26.0f;
 } IronHoe;
 
 struct {
     float baseEntityDamage = 7.2f;
-    float baseBlockDamage = 6f;
+    float baseBlockDamage = 6.0f;
 } Flashlight;
 
 struct {
     float baseEntityDamage = 10.2f;
-    float baseBlockDamage = 7f;
+    float baseBlockDamage = 7.0f;
 } Torch;
 
 struct {
     float baseEntityDamage = 11.5f;
-    float baseBlockDamage = 17f;
+    float baseBlockDamage = 17.0f;
 } RoboticSledge;
 
 struct {
@@ -202,3 +205,55 @@ struct {
     float baseEntityDamage{};
     float baseBlockDamage{};
 } structRobot;
+
+void obtainMeleeWeapon(string meleeWeapon) {
+    string arrayMeleeName[38] = {"StoneAxe", "TazasStoneAxe", "ClawHammer", "IronFireAxe", "SteelAxe",
+    "IronPickaxe", "SteelPickaxe", "StoneShovel", "IronShovel", "SteelShovel", "Chainsaw", "Auger",
+    "Wrench", "Ratchet", "ImpactDriver", "BoneKnife", "HuntingKnife", "CandyKnife", "Machete",
+    "WoodenClub", "BaseballBat", "CandyClub", "SteelClub", "PipeBaton", "StunBaton", "PlasmaBaton",
+    "StoneSpear", "IronSpear", "SteelSpear", "StoneSledgehammer", "IronSledgehammer", "SteelSledgehammer",
+    "LeatherKnuckles", "IronKnuckles", "SteelKnuckles", "IronHoe", "Flashlight", "Torch"
+    };
+
+    float* arrayMeleeEntityDmg[38] = {&StoneAxe.baseEntityDamage, &TazasStoneAxe.baseEntityDamage,
+    &ClawHammer.baseEntityDamage, &IronFireAxe.baseEntityDamage, &SteelAxe.baseEntityDamage,
+    &IronPickaxe.baseEntityDamage, &SteelPickaxe.baseEntityDamage, &StoneShovel.baseEntityDamage,
+    &IronShovel.baseEntityDamage, &SteelShovel.baseEntityDamage, &Chainsaw.baseEntityDamage,
+    &Auger.baseEntityDamage, &Wrench.baseEntityDamage, &Ratchet.baseEntityDamage, 
+    &ImpactDriver.baseEntityDamage, &BoneKnife.baseEntityDamage, &HuntingKnife.baseEntityDamage,
+    &CandyKnife.baseEntityDamage, &Machete.baseEntityDamage, &WoodenClub.baseEntityDamage,
+    &BaseballBat.baseEntityDamage, &CandyClub.baseEntityDamage, &SteelClub.baseEntityDamage,
+    &PipeBaton.baseEntityDamage, &StunBaton.baseEntityDamage, &PlasmaBaton.baseEntityDamage,
+    &StoneSpear.baseEntityDamage, &IronSpear.baseEntityDamage, &SteelSpear.baseEntityDamage,
+    &StoneSledgehammer.baseEntityDamage, &IronSledgehammer.baseEntityDamage, &SteelSledgehammer.baseEntityDamage,
+    &LeatherKnuckles.baseEntityDamage, &IronKnuckles.baseEntityDamage, &SteelKnuckles.baseEntityDamage,
+    &IronHoe.baseEntityDamage, &Flashlight.baseEntityDamage, &Torch.baseEntityDamage
+    };
+
+    float* arrayMeleeBlockDmg[38] = {&StoneAxe.baseBlockDamage, &TazasStoneAxe.baseBlockDamage,
+    &ClawHammer.baseBlockDamage, &IronFireAxe.baseBlockDamage, &SteelAxe.baseBlockDamage,
+    &IronPickaxe.baseBlockDamage, &SteelPickaxe.baseBlockDamage, &StoneShovel.baseBlockDamage,
+    &IronShovel.baseBlockDamage, &SteelShovel.baseBlockDamage, &Chainsaw.baseBlockDamage,
+    &Auger.baseBlockDamage, &Wrench.baseBlockDamage, &Ratchet.baseBlockDamage, 
+    &ImpactDriver.baseBlockDamage, &BoneKnife.baseBlockDamage, &HuntingKnife.baseBlockDamage,
+    &CandyKnife.baseBlockDamage, &Machete.baseBlockDamage, &WoodenClub.baseBlockDamage,
+    &BaseballBat.baseBlockDamage, &CandyClub.baseBlockDamage, &SteelClub.baseBlockDamage,
+    &PipeBaton.baseBlockDamage, &StunBaton.baseBlockDamage, &PlasmaBaton.baseBlockDamage,
+    &StoneSpear.baseBlockDamage, &IronSpear.baseBlockDamage, &SteelSpear.baseBlockDamage,
+    &StoneSledgehammer.baseBlockDamage, &IronSledgehammer.baseBlockDamage, &SteelSledgehammer.baseBlockDamage,
+    &LeatherKnuckles.baseBlockDamage, &IronKnuckles.baseBlockDamage, &SteelKnuckles.baseBlockDamage,
+    &IronHoe.baseBlockDamage, &Flashlight.baseBlockDamage, &Torch.baseBlockDamage
+    };
+
+    for (int i = 0; i < 38; i++) {
+        if (meleeWeapon == arrayMeleeName[i]) {
+        	structMelee.baseEntityDamage = *arrayMeleeEntityDmg[i];
+            structMelee.baseBlockDamage = *arrayMeleeBlockDmg[i];
+        }
+    }
+
+}
+
+
+//arrayRobots[1]
+//arrayGuns

@@ -5,14 +5,14 @@
 using namespace std;
 
 void termgui(string menu) {
-    weapon = "NONE";
-    quality = 1;
-    perkLevel = 0;
-    mods = "NONE";
-    numMods = 0;
-    ammoType = "NONE";
-    enemyType = "NONE"; // for armor
-    buffs = "NONE";
+    string weapon = "NONE";
+    int quality = 1;
+    int perkLevel = 0;
+//  string mods[4] = {"NONE", "NONE", "NONE", "NONE"};
+//  int numMods = 0;
+//  string ammoType = "NONE";
+//  enemyType = "NONE"; // for armor
+//  buffs = "NONE";
 
     int caseMenu{};
 
@@ -71,6 +71,8 @@ void termgui(string menu) {
     }
 }
 
+
+
 // Wooden club is used as an example here.
 int main() {
     // user variables
@@ -96,3 +98,11 @@ int main() {
 
     return 0;
 }
+
+/*
+int main() {
+    obtainMeleeWeapon("WoodenClub");
+    cout << structMelee.baseEntityDamage << endl;
+    cout << structMelee.baseBlockDamage << endl;
+}
+*/
