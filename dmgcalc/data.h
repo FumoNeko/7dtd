@@ -192,3 +192,13 @@ struct {
     float baseEntityDamage = 11.5f;
     float baseBlockDamage = 17f;
 } RoboticSledge;
+
+struct {
+    float baseEntityDamage{};
+    float baseBlockDamage{};
+} structMelee;
+
+struct {
+    float baseEntityDamage{};
+    float baseBlockDamage{};
+} structRobot;
