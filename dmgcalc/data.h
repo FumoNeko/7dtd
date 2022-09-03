@@ -1,5 +1,19 @@
 #include <string>
+#include <fstream>
+#include <map>
 using namespace std;
+
+// Create and open text file
+ifstream dumpFile("dump.txt");
+
+// Read the file
+while (getline (dumpFile, dumpText)) {
+    // Output text
+    cout << dumpText;
+}
+
+// Close the file
+dumpFile.close();
 
 struct {
     float baseEntityDamage = 6.0f;
@@ -206,6 +220,7 @@ struct {
     float baseBlockDamage{};
 } structRobot;
 
+// turn this into a map because this is gorilla monkey code
 void obtainMeleeWeapon(string meleeWeapon) {
     string arrayMeleeName[38] = {"StoneAxe", "TazasStoneAxe", "ClawHammer", "IronFireAxe", "SteelAxe",
     "IronPickaxe", "SteelPickaxe", "StoneShovel", "IronShovel", "SteelShovel", "Chainsaw", "Auger",

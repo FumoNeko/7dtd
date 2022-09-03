@@ -24,6 +24,8 @@ baseBlockDamage = re.findall(r'(?<=passive_effect name=\"BlockDamage\" operation
 dump = open(cwd + "/dump.txt", "w")
 r = 0
 
+# Melee Weapons
+dump.write("----MELEE WEAPONS----" + "\n")
 for i in range(0, 38):
     if i == 3:
         r = r + 1
@@ -31,7 +33,8 @@ for i in range(0, 38):
     dump.write("Base Entity Damage: " + baseEntityDamage[i] + "\n")
     dump.write("Base Block Damage: " + baseBlockDamage[i] + "\n")
     r = r + 1
-
+# Robotic Sledge
+dump.write("----ROBOTIC TURRETS----" + "\n")
 dump.write("Item Name: " + itemName[65] + "\n")
 dump.write("Base Entity Damage: " + baseEntityDamage[38] + "\n")
 dump.write("Base Block Damage: " + baseBlockDamage[38] + "\n")
