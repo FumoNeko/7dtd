@@ -1,3 +1,9 @@
+// come back here when you wake up because 
+// c++ doesn't support lookbehind so I'm going to mod the python
+// script to create a second dump with the regex files
+// or get rid of the labels
+// would have liked to know before I wasted hours.
+
 // g++ -std=c++17 -o program.out program.cpp
 #include <iostream>
 #include <regex>
