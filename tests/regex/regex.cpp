@@ -1,5 +1,7 @@
 // hours wasted: 3
 
+// yeah nevermind I give up on this lol
+
 // g++ -std=c++17 -lpcrecpp -o program.out program.cpp
 #include <iostream>
 #include <pcrecpp.h>
@@ -20,8 +22,8 @@ int main() {
     */
 
     std::string s;
-    pcrecpp::RE re("Item Name: meleeToolRepairT\\d\\K(.*)");
-    re.FullMatch("Item Name: meleeToolRepairT0StoneAxe", &s);
+    pcrecpp::RE re("(Item Name: meleeToolRepairT\\d\\K(.*))|(Item Name: meleeToolAxeT\\d\\K(.*))");
+    re.FullMatch("Item Name: meleeToolAxeT1IronFireaxe", &s);
     std::cout << s << std::endl;
     
     return 0;
