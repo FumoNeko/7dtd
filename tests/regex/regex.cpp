@@ -1,15 +1,13 @@
-// come back here when you wake up because 
-// c++ doesn't support lookbehind so I'm going to mod the python
-// script to create a second dump with the regex files
-// or get rid of the labels
-// would have liked to know before I wasted hours.
+// hours wasted: 3
 
-// g++ -std=c++17 -o program.out program.cpp
+// g++ -std=c++17 -lpcrecpp -o program.out program.cpp
 #include <iostream>
-#include <regex>
+#include <pcrecpp.h>
 
 int main() {
+    /*
     std::string text = "10 2 / 3 + 7 4";
+    
     std::regex rgx("([0-9]+|[\\/*+-])\\s+");
 
     auto operands_begin = std::sregex_iterator(text.begin(), text.end(), rgx);
@@ -19,4 +17,12 @@ int main() {
     {
         std::cout << itr->str() << '\n';
     }
+    */
+
+    std::string s;
+    pcrecpp::RE re("Item Name: meleeToolRepairT\\d\\K(.*)");
+    re.FullMatch("Item Name: meleeToolRepairT0StoneAxe", &s);
+    std::cout << s << std::endl;
+    
+    return 0;
 }
