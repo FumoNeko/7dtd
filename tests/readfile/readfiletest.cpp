@@ -1,9 +1,7 @@
 // g++ -std=c++17 -o program.out program.cpp
-
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <regex>
 using namespace std;
 
 int main() {
@@ -29,7 +27,7 @@ int main() {
     }
     myFile.close();
 
-    // trim data
+    // get label locations to start and stop scanning
     string labelMelee{};
     string labelRobot{};
     int labelMeleeLocation{};
@@ -46,19 +44,31 @@ int main() {
         }
     }
 
-    // 1, 4, 7... (+3)
-    for (int i = labelMeleeLocation+1; i < labelRobotLocation; i = i + 3) {
-        string itemName = lineArr[i];
-        regex rgx("(?<=Item Name: meleeToolRepairT\\d).*|(?<=Item Name: meleeToolAxeT\\d).*|(?<=Item Name: meleeToolPickT\\d).*|(?<=Item Name: meleeToolShovelT\\d).*|(?<=Item Name: meleeToolSalvageT\\d).*|(?<=Item Name: meleeWpnBladeT\\d).*|(?<=Item Name: meleeWpnClubT\\d).*|(?<=Item Name: meleeWpnBatonT\\d).*|(?<=Item Name: meleeWpnSpearT\\d).*|(?<=Item Name: meleeWpnSledgeT\\d).*|(?<=Item Name: meleeWpnKnucklesT\\d).*|(?<=Item Name: meleeToolFarmT\\d).*|(?<=Item Name: meleeTool)Flashlight|Torch");
-        auto operands_begin = sregex_iterator(itemName.begin(), itemName.end(), rgx);
-        auto operands_end = sregex_iterator();
-        for (sregex_iterator itr = operands_begin; itr != operands_end; ++itr) {
-            cout << itr->str() << "\n";
-        }
-        //lineArr[i];
-    }
+    // Create arrays to store the results of reading the dump
+    string arrMeleeName[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
+    float arrMeleeEntityDmg[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
+    float arrMeleeBlockDmg[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
 
-    //convert numbers to floats
+    // Insert Melee items into their arrays
+    for (int i = labelMeleeLocation+1; i < labelRobotLocation; i = i + 3) {
+        string itemName = lineArr[i];                    // itemName
+        arrMeleeName[(i-1)/3] = itemName;
+        string entityDamageStr = lineArr[i+1];           // entityDamage string
+        float entityDamageFloat = stof(entityDamageStr); // convert to float
+        arrMeleeEntityDmg[(i-1)/3] = entityDamageFloat;
+        string blockDamageStr = lineArr[i+2];            // blockDamage string
+        float blockDamageFloat = stof(blockDamageStr);   // convert to float
+        arrMeleeBlockDmg[(i-1)/3] = blockDamageFloat;
+    }
+    // I've decided I don't need pointers, but will leave commented code anyway in case I do need them.
+    // Create pointers to each item in the array
+    float* ptrArrMeleeEntityDmg[labelRobotLocation-labelMeleeLocation/3] = {};
+    float* ptrArrMeleeBlockDmg[labelRobotLocation-labelMeleeLocation/3] = {};
+    for (int i = 0; i < (labelRobotLocation-labelMeleeLocation)/3; i++) {
+        ptrArrMeleeEntityDmg[i] = &arrMeleeEntityDmg[i];
+        ptrArrMeleeBlockDmg[i] = &arrMeleeBlockDmg[i];
+    }
+    cout << *ptrArrMeleeEntityDmg[0] << endl;
 
     return 0;
     /*

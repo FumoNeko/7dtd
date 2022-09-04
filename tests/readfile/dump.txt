@@ -1,119 +1,119 @@
 ----MELEE WEAPONS----
-Item Name: meleeToolRepairT0StoneAxe
-Base Entity Damage: 6
-Base Block Damage: 21.5
-Item Name: meleeToolRepairT0TazasStoneAxe
-Base Entity Damage: 8
-Base Block Damage: 22.6
-Item Name: meleeToolRepairT1ClawHammer
-Base Entity Damage: 12
-Base Block Damage: 22
-Item Name: meleeToolAxeT1IronFireaxe
-Base Entity Damage: 15.1
-Base Block Damage: 47.0
-Item Name: meleeToolAxeT2SteelAxe
-Base Entity Damage: 28.9
-Base Block Damage: 86.2
-Item Name: meleeToolPickT1IronPickaxe
-Base Entity Damage: 11.2
-Base Block Damage: 35.5
-Item Name: meleeToolPickT2SteelPickaxe
-Base Entity Damage: 23.2
-Base Block Damage: 62.8
-Item Name: meleeToolShovelT0StoneShovel
-Base Entity Damage: 9.6
-Base Block Damage: 38.4
-Item Name: meleeToolShovelT1IronShovel
-Base Entity Damage: 11.6
-Base Block Damage: 51
-Item Name: meleeToolShovelT2SteelShovel
-Base Entity Damage: 17.4
-Base Block Damage: 69
-Item Name: meleeToolAxeT3Chainsaw
-Base Entity Damage: 6
-Base Block Damage: 24.3
-Item Name: meleeToolPickT3Auger
-Base Entity Damage: 4.2
-Base Block Damage: 20.7
-Item Name: meleeToolSalvageT1Wrench
-Base Entity Damage: 16.5
-Base Block Damage: 38.5
-Item Name: meleeToolSalvageT2Ratchet
-Base Entity Damage: 16.5
-Base Block Damage: 48.5
-Item Name: meleeToolSalvageT3ImpactDriver
-Base Entity Damage: 16.5
-Base Block Damage: 58
-Item Name: meleeWpnBladeT0BoneKnife
-Base Entity Damage: 5.1
-Base Block Damage: 4
-Item Name: meleeWpnBladeT1HuntingKnife
-Base Entity Damage: 6.1
-Base Block Damage: 5.3
-Item Name: meleeWpnBladeT1CandyKnife
-Base Entity Damage: 6.6
-Base Block Damage: 5.5
-Item Name: meleeWpnBladeT3Machete
-Base Entity Damage: 19.8
-Base Block Damage: 21
-Item Name: meleeWpnClubT0WoodenClub
-Base Entity Damage: 13.8
-Base Block Damage: 11.6
-Item Name: meleeWpnClubT1BaseballBat
-Base Entity Damage: 17.4
-Base Block Damage: 14.6
-Item Name: meleeWpnClubT1CandyClub
-Base Entity Damage: 19.2
-Base Block Damage: 16
-Item Name: meleeWpnClubT3SteelClub
-Base Entity Damage: 26.2
-Base Block Damage: 22.1
-Item Name: meleeWpnBatonT0PipeBaton
-Base Entity Damage: 13.8
-Base Block Damage: 11.6
-Item Name: meleeWpnBatonT2StunBaton
-Base Entity Damage: 10.8
-Base Block Damage: 6
-Item Name: meleeWpnBatonT3PlasmaBaton
-Base Entity Damage: 10.8
-Base Block Damage: 6
-Item Name: meleeWpnSpearT0StoneSpear
-Base Entity Damage: 10.3
-Base Block Damage: 5
-Item Name: meleeWpnSpearT1IronSpear
-Base Entity Damage: 12.4
-Base Block Damage: 7
-Item Name: meleeWpnSpearT3SteelSpear
-Base Entity Damage: 18.6
-Base Block Damage: 9
-Item Name: meleeWpnSledgeT0StoneSledgehammer
-Base Entity Damage: 17.5
-Base Block Damage: 27.2
-Item Name: meleeWpnSledgeT1IronSledgehammer
-Base Entity Damage: 30.8
-Base Block Damage: 58.3
-Item Name: meleeWpnSledgeT3SteelSledgehammer
-Base Entity Damage: 46.2
-Base Block Damage: 85
-Item Name: meleeWpnKnucklesT0LeatherKnuckles
-Base Entity Damage: 6.2
-Base Block Damage: 2.2
-Item Name: meleeWpnKnucklesT1IronKnuckles
-Base Entity Damage: 9.1
-Base Block Damage: 3
-Item Name: meleeWpnKnucklesT3SteelKnuckles
-Base Entity Damage: 13.6
-Base Block Damage: 5.2
-Item Name: meleeToolFarmT1IronHoe
-Base Entity Damage: 13.2
-Base Block Damage: 26
-Item Name: meleeToolFlashlight02
-Base Entity Damage: 7.2
-Base Block Damage: 6
-Item Name: meleeToolTorch
-Base Entity Damage: 10.2
-Base Block Damage: 7
+StoneAxe
+6
+21.5
+TazasStoneAxe
+8
+22.6
+ClawHammer
+12
+22
+IronFireaxe
+15.1
+47.0
+SteelAxe
+28.9
+86.2
+IronPickaxe
+11.2
+35.5
+SteelPickaxe
+23.2
+62.8
+StoneShovel
+9.6
+38.4
+IronShovel
+11.6
+51
+SteelShovel
+17.4
+69
+Chainsaw
+6
+24.3
+Auger
+4.2
+20.7
+Wrench
+16.5
+38.5
+Ratchet
+16.5
+48.5
+ImpactDriver
+16.5
+58
+BoneKnife
+5.1
+4
+HuntingKnife
+6.1
+5.3
+CandyKnife
+6.6
+5.5
+Machete
+19.8
+21
+WoodenClub
+13.8
+11.6
+BaseballBat
+17.4
+14.6
+CandyClub
+19.2
+16
+SteelClub
+26.2
+22.1
+PipeBaton
+13.8
+11.6
+StunBaton
+10.8
+6
+PlasmaBaton
+10.8
+6
+StoneSpear
+10.3
+5
+IronSpear
+12.4
+7
+SteelSpear
+18.6
+9
+StoneSledgehammer
+17.5
+27.2
+IronSledgehammer
+30.8
+58.3
+SteelSledgehammer
+46.2
+85
+LeatherKnuckles
+6.2
+2.2
+IronKnuckles
+9.1
+3
+SteelKnuckles
+13.6
+5.2
+IronHoe
+13.2
+26
+Flashlight
+7.2
+6
+Torch
+10.2
+7
 ----ROBOTIC TURRETS----
-Item Name: gunBotT1JunkSledge
-Base Entity Damage: 11.5
-Base Block Damage: 17
+RoboticSledge
+11.5
+17
