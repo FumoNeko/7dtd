@@ -1,274 +1,75 @@
-#include <string>
+// g++ -std=c++17 -o program.out program.cpp
+#include <iostream>
 #include <fstream>
-#include <map>
+#include <string>
 using namespace std;
 
-// Create and open text file
-ifstream dumpFile("dump.txt");
+int main() {
+    int i = 0;
+    string dumpText{};
+    int lineTotal{};
+    string *lineArr = NULL;
 
-// Read the file
-while (getline (dumpFile, dumpText)) {
-    // Output text
-    cout << dumpText;
-}
+    // Figure out number of lines
+    ifstream myfile("dump.txt");
+    while (!myfile.eof()) {
+        getline(myfile, dumpText);
+        lineTotal++;
+    }
+    myfile.close();
 
-// Close the file
-dumpFile.close();
+    // Dynamic memory allocation to alloc size of (lineTotal) to line array
+    lineArr = new string[lineTotal];
+    ifstream myFile("dump.txt");
+    while (!myFile.eof()) {
+        getline(myFile, lineArr[i]);
+        i++;
+    }
+    myFile.close();
 
-struct {
-    float baseEntityDamage = 6.0f;
-    float baseBlockDamage = 21.5f;
-} StoneAxe;
-
-struct {
-    float baseEntityDamage = 8.0f;
-    float baseBlockDamage = 22.6f;
-} TazasStoneAxe;
-
-struct {
-    float baseEntityDamage = 12.0f;
-    float baseBlockDamage = 22.0f;
-} ClawHammer;
-
-struct {
-    float baseEntityDamage = 15.1f;
-    float baseBlockDamage = 47.0f;
-} IronFireAxe;
-
-struct {
-    float baseEntityDamage = 28.9f;
-    float baseBlockDamage = 86.2f;
-} SteelAxe;
-
-struct {
-    float baseEntityDamage = 11.2f;
-    float baseBlockDamage = 35.5f;
-} IronPickaxe;
-
-struct {
-    float baseEntityDamage = 23.2f;
-    float baseBlockDamage = 62.8f;
-} SteelPickaxe;
-
-struct {
-    float baseEntityDamage = 9.6f;
-    float baseBlockDamage = 38.4f;
-} StoneShovel;
-
-struct {
-    float baseEntityDamage = 11.6f;
-    float baseBlockDamage = 51.0f;
-} IronShovel;
-
-struct {
-    float baseEntityDamage = 17.4f;
-    float baseBlockDamage = 69.0f;
-} SteelShovel;
-
-struct {
-    float baseEntityDamage = 6.0f;
-    float baseBlockDamage = 24.3f;
-} Chainsaw;
-
-struct {
-    float baseEntityDamage = 4.2f;
-    float baseBlockDamage = 20.7f;
-} Auger;
-
-struct {
-    float baseEntityDamage = 16.5f;
-    float baseBlockDamage = 38.5f;
-} Wrench;
-
-struct {
-    float baseEntityDamage = 16.5f;
-    float baseBlockDamage = 48.5f;
-} Ratchet;
-
-struct {
-    float baseEntityDamage = 16.5f;
-    float baseBlockDamage = 58.0f;
-} ImpactDriver;
-
-struct {
-    float baseEntityDamage = 5.1f;
-    float baseBlockDamage = 4.0f;
-} BoneKnife;
-
-struct {
-    float baseEntityDamage = 6.1f;
-    float baseBlockDamage = 5.3f;
-} HuntingKnife;
-
-struct {
-    float baseEntityDamage = 6.6f;
-    float baseBlockDamage = 5.5f;
-} CandyKnife;
-
-struct {
-    float baseEntityDamage = 19.8f;
-    float baseBlockDamage = 21.0f;
-} Machete;
-
-struct {
-    float baseEntityDamage = 13.8f;
-    float baseBlockDamage = 11.6f;
-} WoodenClub;
-
-struct {
-    float baseEntityDamage = 17.4f;
-    float baseBlockDamage = 14.6f;
-} BaseballBat;
-
-struct {
-    float baseEntityDamage = 19.2f;
-    float baseBlockDamage = 16.0f;
-} CandyClub;
-
-struct {
-    float baseEntityDamage = 26.2f;
-    float baseBlockDamage = 22.1f;
-} SteelClub;
-
-struct {
-    float baseEntityDamage = 13.8f;
-    float baseBlockDamage = 11.6f;
-} PipeBaton;
-
-struct {
-    float baseEntityDamage = 10.8f;
-    float baseBlockDamage = 6.0f;
-} StunBaton;
-
-struct {
-    float baseEntityDamage = 10.8f;
-    float baseBlockDamage = 6.0f;
-} PlasmaBaton;
-
-struct {
-    float baseEntityDamage = 10.3f;
-    float baseBlockDamage = 5.0f;
-} StoneSpear;
-
-struct {
-    float baseEntityDamage = 12.4f;
-    float baseBlockDamage = 7.0f;
-} IronSpear;
-
-struct {
-    float baseEntityDamage = 18.6f;
-    float baseBlockDamage = 9.0f;
-} SteelSpear;
-
-struct {
-    float baseEntityDamage = 17.5f;
-    float baseBlockDamage = 27.2f;
-} StoneSledgehammer;
-
-struct {
-    float baseEntityDamage = 30.8f;
-    float baseBlockDamage = 58.3f;
-} IronSledgehammer;
-
-struct {
-    float baseEntityDamage = 46.2f;
-    float baseBlockDamage = 85.0f;
-} SteelSledgehammer;
-
-struct {
-    float baseEntityDamage = 6.2f;
-    float baseBlockDamage = 2.2f;
-} LeatherKnuckles;
-
-struct {
-    float baseEntityDamage = 9.1f;
-    float baseBlockDamage = 3.0f;
-} IronKnuckles;
-
-struct {
-    float baseEntityDamage = 13.6f;
-    float baseBlockDamage = 5.2f;
-} SteelKnuckles;
-
-struct {
-    float baseEntityDamage = 13.2f;
-    float baseBlockDamage = 26.0f;
-} IronHoe;
-
-struct {
-    float baseEntityDamage = 7.2f;
-    float baseBlockDamage = 6.0f;
-} Flashlight;
-
-struct {
-    float baseEntityDamage = 10.2f;
-    float baseBlockDamage = 7.0f;
-} Torch;
-
-struct {
-    float baseEntityDamage = 11.5f;
-    float baseBlockDamage = 17.0f;
-} RoboticSledge;
-
-struct {
-    float baseEntityDamage{};
-    float baseBlockDamage{};
-} structMelee;
-
-struct {
-    float baseEntityDamage{};
-    float baseBlockDamage{};
-} structRobot;
-
-// turn this into a map because this is gorilla monkey code
-void obtainMeleeWeapon(string meleeWeapon) {
-    string arrayMeleeName[38] = {"StoneAxe", "TazasStoneAxe", "ClawHammer", "IronFireAxe", "SteelAxe",
-    "IronPickaxe", "SteelPickaxe", "StoneShovel", "IronShovel", "SteelShovel", "Chainsaw", "Auger",
-    "Wrench", "Ratchet", "ImpactDriver", "BoneKnife", "HuntingKnife", "CandyKnife", "Machete",
-    "WoodenClub", "BaseballBat", "CandyClub", "SteelClub", "PipeBaton", "StunBaton", "PlasmaBaton",
-    "StoneSpear", "IronSpear", "SteelSpear", "StoneSledgehammer", "IronSledgehammer", "SteelSledgehammer",
-    "LeatherKnuckles", "IronKnuckles", "SteelKnuckles", "IronHoe", "Flashlight", "Torch"
-    };
-
-    float* arrayMeleeEntityDmg[38] = {&StoneAxe.baseEntityDamage, &TazasStoneAxe.baseEntityDamage,
-    &ClawHammer.baseEntityDamage, &IronFireAxe.baseEntityDamage, &SteelAxe.baseEntityDamage,
-    &IronPickaxe.baseEntityDamage, &SteelPickaxe.baseEntityDamage, &StoneShovel.baseEntityDamage,
-    &IronShovel.baseEntityDamage, &SteelShovel.baseEntityDamage, &Chainsaw.baseEntityDamage,
-    &Auger.baseEntityDamage, &Wrench.baseEntityDamage, &Ratchet.baseEntityDamage, 
-    &ImpactDriver.baseEntityDamage, &BoneKnife.baseEntityDamage, &HuntingKnife.baseEntityDamage,
-    &CandyKnife.baseEntityDamage, &Machete.baseEntityDamage, &WoodenClub.baseEntityDamage,
-    &BaseballBat.baseEntityDamage, &CandyClub.baseEntityDamage, &SteelClub.baseEntityDamage,
-    &PipeBaton.baseEntityDamage, &StunBaton.baseEntityDamage, &PlasmaBaton.baseEntityDamage,
-    &StoneSpear.baseEntityDamage, &IronSpear.baseEntityDamage, &SteelSpear.baseEntityDamage,
-    &StoneSledgehammer.baseEntityDamage, &IronSledgehammer.baseEntityDamage, &SteelSledgehammer.baseEntityDamage,
-    &LeatherKnuckles.baseEntityDamage, &IronKnuckles.baseEntityDamage, &SteelKnuckles.baseEntityDamage,
-    &IronHoe.baseEntityDamage, &Flashlight.baseEntityDamage, &Torch.baseEntityDamage
-    };
-
-    float* arrayMeleeBlockDmg[38] = {&StoneAxe.baseBlockDamage, &TazasStoneAxe.baseBlockDamage,
-    &ClawHammer.baseBlockDamage, &IronFireAxe.baseBlockDamage, &SteelAxe.baseBlockDamage,
-    &IronPickaxe.baseBlockDamage, &SteelPickaxe.baseBlockDamage, &StoneShovel.baseBlockDamage,
-    &IronShovel.baseBlockDamage, &SteelShovel.baseBlockDamage, &Chainsaw.baseBlockDamage,
-    &Auger.baseBlockDamage, &Wrench.baseBlockDamage, &Ratchet.baseBlockDamage, 
-    &ImpactDriver.baseBlockDamage, &BoneKnife.baseBlockDamage, &HuntingKnife.baseBlockDamage,
-    &CandyKnife.baseBlockDamage, &Machete.baseBlockDamage, &WoodenClub.baseBlockDamage,
-    &BaseballBat.baseBlockDamage, &CandyClub.baseBlockDamage, &SteelClub.baseBlockDamage,
-    &PipeBaton.baseBlockDamage, &StunBaton.baseBlockDamage, &PlasmaBaton.baseBlockDamage,
-    &StoneSpear.baseBlockDamage, &IronSpear.baseBlockDamage, &SteelSpear.baseBlockDamage,
-    &StoneSledgehammer.baseBlockDamage, &IronSledgehammer.baseBlockDamage, &SteelSledgehammer.baseBlockDamage,
-    &LeatherKnuckles.baseBlockDamage, &IronKnuckles.baseBlockDamage, &SteelKnuckles.baseBlockDamage,
-    &IronHoe.baseBlockDamage, &Flashlight.baseBlockDamage, &Torch.baseBlockDamage
-    };
-
-    for (int i = 0; i < 38; i++) {
-        if (meleeWeapon == arrayMeleeName[i]) {
-        	structMelee.baseEntityDamage = *arrayMeleeEntityDmg[i];
-            structMelee.baseBlockDamage = *arrayMeleeBlockDmg[i];
+    // get label locations to start and stop scanning
+    string labelMelee{};
+    string labelRobot{};
+    int labelMeleeLocation{};
+    int labelRobotLocation{};
+    labelMelee = "----MELEE WEAPONS----";
+    labelRobot = "----ROBOTIC TURRETS----";
+    // Search for labels
+    for (int i = 0; i <= lineTotal-2; i++) {
+        if (lineArr[i] == labelMelee) {
+            labelMeleeLocation = i; 
+        }
+        else if (lineArr[i] == labelRobot) {
+            labelRobotLocation = i;
         }
     }
 
+    // Create arrays to store the results of reading the dump
+    string arrMeleeName[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
+    float arrMeleeEntityDmg[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
+    float arrMeleeBlockDmg[(labelRobotLocation-labelMeleeLocation-1)/3] = {};
+
+    // Insert Melee items into their arrays
+    for (int i = labelMeleeLocation+1; i < labelRobotLocation; i = i + 3) {
+        string itemName = lineArr[i];                    // itemName
+        arrMeleeName[(i-1)/3] = itemName;
+        string entityDamageStr = lineArr[i+1];           // entityDamage string
+        float entityDamageFloat = stof(entityDamageStr); // convert to float
+        arrMeleeEntityDmg[(i-1)/3] = entityDamageFloat;
+        string blockDamageStr = lineArr[i+2];            // blockDamage string
+        float blockDamageFloat = stof(blockDamageStr);   // convert to float
+        arrMeleeBlockDmg[(i-1)/3] = blockDamageFloat;
+    }
+    // I've decided I don't need pointers, but will leave commented code anyway in case I do need them.
+    // Create pointers to each item in the array
+    /*
+    float* ptrArrMeleeEntityDmg[labelRobotLocation-labelMeleeLocation/3] = {};
+    float* ptrArrMeleeBlockDmg[labelRobotLocation-labelMeleeLocation/3] = {};
+    for (int i = 0; i < (labelRobotLocation-labelMeleeLocation)/3; i++) {
+        ptrArrMeleeEntityDmg[i] = &arrMeleeEntityDmg[i];
+        ptrArrMeleeBlockDmg[i] = &arrMeleeBlockDmg[i];
+    }
+    //cout << *ptrArrMeleeEntityDmg[0] << endl;
+    */
+    return 0;
 }
-
-
-//arrayRobots[1]
-//arrayGuns

@@ -62,18 +62,14 @@ int main() {
     }
     // I've decided I don't need pointers, but will leave commented code anyway in case I do need them.
     // Create pointers to each item in the array
+    /*
     float* ptrArrMeleeEntityDmg[labelRobotLocation-labelMeleeLocation/3] = {};
     float* ptrArrMeleeBlockDmg[labelRobotLocation-labelMeleeLocation/3] = {};
     for (int i = 0; i < (labelRobotLocation-labelMeleeLocation)/3; i++) {
         ptrArrMeleeEntityDmg[i] = &arrMeleeEntityDmg[i];
         ptrArrMeleeBlockDmg[i] = &arrMeleeBlockDmg[i];
     }
-    cout << *ptrArrMeleeEntityDmg[0] << endl;
-
-    return 0;
-    /*
-    cout << lineArr[118] << endl; // last line = lineTotal - 2
-    cout << lineTotal << endl;
-    return 0;
+    //cout << *ptrArrMeleeEntityDmg[0] << endl;
     */
+    return 0;
 }
