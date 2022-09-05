@@ -19,53 +19,25 @@ int checkInput() {
 	}
 }
 
-int termGui(string menu) {
-    string weapon = "NONE";
-    int quality = 1;
-    int perkLevel = 0;
-//  string mods[4] = {"NONE", "NONE", "NONE", "NONE"};
-//  int numMods = 0;
-//  string ammoType = "NONE";
-//  enemyType = "NONE"; // for armor
-//  buffs = "NONE";
-
-    int caseMenu{};
+int termGui(int menu) {
     int selection{};
-
-    if (menu == "exit") {
-        caseMenu = 0;
-    }
-    else if (menu == "main") {
-        caseMenu = 1;
-    }
-    else if (menu == "weapon") {
-        caseMenu = 2;
-    }
-    else if (menu == "quality") {
-        caseMenu = 3;
-    }
-    else if (menu == "perkLevel") {
-        caseMenu = 4;
-    }
-    /*
-    else if (menu == "mods") {
-        caseMenu = ?;
-    }
-    */
-    else if (menu == "numMods") {
-        caseMenu = 5;
-    }
-    else if (menu == "buffs") {
-        caseMenu = 6;
-    }
-    else if (menu == "ammoType") {
-        caseMenu = 7;
-    }
-    else if (menu == "enemyType") {
-        caseMenu = 8;
-    }
+/*
+    "exit" menu = 0;
+    "main" menu = 1;
+    "weapon" menu = 2;
+    "quality" menu = 3;
+    "perkLevel" menu = 4;
+    "mods" menu = ?;
+    "numMods" = 5;
+    "buffs" menu = 6;
+    "ammoType" menu = 7;
+    "enemtType" menu = 8;
+*/
     // while loop to select caseMenu int? going to bed.
-    switch(caseMenu) {
+    switch(menu) {
+        case 0:
+        // exit program
+        break;
         case 1:
             cout << "------Main Menu------"                                                             << endl;
             cout << "Select an option from the menu:"                                                   << endl;
