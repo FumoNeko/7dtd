@@ -1,4 +1,4 @@
-int checkInput(){
+int checkInput() {
     try {
         string str{};
         cin >> str;
@@ -67,17 +67,17 @@ int termGui(string menu) {
     // while loop to select caseMenu int? going to bed.
     switch(caseMenu) {
         case 1:
-            cout << "------Main Menu------"                                                    << endl;
-            cout << "Select an option from the menu:"                                          << endl;
-            cout << "0. Exit Program"                                                          << endl;
-            cout << "1. Set Variable: Weapon"             << " Selected: " << weapon    << " " << endl;
-            cout << "2. Set Variable: Quality"            << " Selected: " << quality   << " " << endl;
-            cout << "3. Set Variable: Perk Level"         << " Selected: " << perkLevel << " " << endl;
-            //cout << "Set Array: Mods"                   << " Selected: " << mods      << " " << endl;
-            cout << "4. Set Variable: # of Mods"          << " Selected: " << numMods   << " " << endl;
-            cout << "5. Set Array: Buffs"                 << " Selected: " << buffs     << " " << endl;
-            cout << "6. Set Variable: Ammo Type"          <<
-            cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << enemyType << " " << endl;
+            cout << "------Main Menu------"                                                             << endl;
+            cout << "Select an option from the menu:"                                                   << endl;
+            cout << "0. Exit Program"                                                                   << endl;
+            cout << "1. Set Variable: Weapon"             << " Selected: " << selected.weapon    << " " << endl;
+            cout << "2. Set Variable: Quality"            << " Selected: " << selected.quality   << " " << endl;
+            cout << "3. Set Variable: Perk Level"         << " Selected: " << selected.perkLevel << " " << endl;
+            //cout << "Set Array: Mods"                   << " Selected: " << selected.mods      << " " << endl;
+            cout << "4. Set Variable: # of Mods"          << " Selected: " << selected.numMods   << " " << endl;
+            cout << "5. Set Array: Buffs"                 << " Selected: " << selected.buffs     << " " << endl;
+            cout << "6. Set Variable: Ammo Type"          << " Selected: " << selected.ammoType  << " " << endl;
+            cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << sekected.enemyType << " " << endl;
             badAnswer = true;
             while (badAnswer == true) {
                 selection = checkInput();
@@ -142,5 +142,6 @@ int termGui(string menu) {
             break;
         default:
             cout << "This feature has not been implemented yet." << endl;
+            return 1;
     }
 }

@@ -60,6 +60,7 @@ int main() {
         float blockDamageFloat = stof(blockDamageStr);   // convert to float
         arrMeleeBlockDmg[(i-1)/3] = blockDamageFloat;
     }
+    
     // I've decided I don't need pointers, but will leave commented code anyway in case I do need them.
     // Create pointers to each item in the array
     /*

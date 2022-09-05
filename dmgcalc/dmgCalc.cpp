@@ -5,19 +5,43 @@
 #include "termGui.cpp"
 using namespace std;
 
+struct {
+    string weapon = "NONE";
+    int quality = 1;
+    int perkLevel = 0;
+//  string mods[4] = {"NONE", "NONE", "NONE", "NONE"};
+//  int numMods = 0;
+//  string ammoType = "NONE";
+//  enemyType = "NONE"; // for armor
+//  buffs = "NONE";
+} selected;
+
+string checkCode(int rCode) {
+    if {rCode <=7} {
+        int optionsMain[8] = {0, 1, 2, 3, 4, 5, 6, 7};
+        for (int i = 0; i <= 7) {
+            //stuff
+        }
+    }
+    int optionsWeapon[39] = {}; // {100, 101, ... 138}
+    for (int i = 0; i < 39; i++) {
+        optionsWeapon[i] = 100 + i;
+    }
+    int optionsQuality[7] = {200, 201, 202, 203, 204, 205, 206};
+    int optionsPerkLevel[7] = {300, 301, 302, 303, 304, 305, 306};
+
+
+}
+
 // Wooden club is used as an example here.
 int main() {
-    bool menuState = true;
-    if (menuState == true){
-        returnCode = termGui("main");
-        int optionsMain[8] = {0, 1, 2, 3, 4, 5, 6, 7};
-        int optionsWeapon[39] = {}; // {100, 101, ... 138}
-        for (int i = 0; i < 39; i++) {
-            optionsWeapon[i] = 100 + i;
-        }
-        int optionsQuality[7] = {200, 201, 202, 203, 204, 205, 206};
-        int optionsPerkLevel[7] = {300, 301, 302, 303, 304, 305, 306};
-
+    // define return codes
+    int returnCode{};
+    // menu
+    string menuState = "main";
+    while (menuState == "main"){
+        returnCode = termGui(menuState);
+        returnCode = termGui(checkCode(returnCode));
     }
 
     /*
