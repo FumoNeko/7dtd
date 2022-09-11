@@ -1,3 +1,14 @@
+#ifndef commonheaders
+#define commonheaders
+#include "data.h"
+#endif
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool badAnswer{};
+
 int checkInput() {
     try {
         string str{};
@@ -49,7 +60,7 @@ int termGui(int menu) {
             cout << "4. Set Variable: # of Mods"          << " Selected: " << selected.numMods   << " " << endl;
             cout << "5. Set Array: Buffs"                 << " Selected: " << selected.buffs     << " " << endl;
             cout << "6. Set Variable: Ammo Type"          << " Selected: " << selected.ammoType  << " " << endl;
-            cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << sekected.enemyType << " " << endl;
+            cout << "7. Set Variable: Enemy Type (Armor)" << " Selected: " << selected.enemyType << " " << endl;
             badAnswer = true;
             while (badAnswer == true) {
                 selection = checkInput();
@@ -116,4 +127,5 @@ int termGui(int menu) {
             cout << "This feature has not been implemented yet." << endl;
             return 1;
     }
+    return 0;
 }
