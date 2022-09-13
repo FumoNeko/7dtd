@@ -1,6 +1,7 @@
 # Description
 This is a simple damage calculator for 7 days to die Alpha 20.6.
-As of right now v0.2 pre-alpha this is only capable of handling melee weapons and the robotic sledge.
+Pre-alpha v0.3 has been released which features a Terminal GUI, all melee weapons, Difficulty, Quality, and Perk Levels for both Entity and Block damage.
+Work on a Qt-5 GUI Variant will begin after linux release.
 
 # Todo
 <li>Armor needs testing.</li>
@@ -8,6 +9,7 @@ As of right now v0.2 pre-alpha this is only capable of handling melee weapons an
 <li>Recog and other buffs need testing.</li>
 <li>Bullet types need testing.</li>
 <li>Mod Power needs testing.</li>
+<li>Linux testing and Binary Release for Pre-alpha v0.3</li>
 
 <li>Data for each weapon needs to be added.</li>
 
