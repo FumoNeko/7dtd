@@ -9,7 +9,6 @@ Work on a Qt-5 GUI Variant will begin after linux release.
 <li>Recog and other buffs need testing.</li>
 <li>Bullet types need testing.</li>
 <li>Mod Power needs testing.</li>
-<li>Linux testing and Binary Release for Pre-alpha v0.3</li>
 
 <li>Data for each weapon needs to be added.</li>
 
